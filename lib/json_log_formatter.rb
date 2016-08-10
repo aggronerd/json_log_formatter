@@ -6,7 +6,8 @@ class JsonLogFormatter < ActiveSupport::Logger::SimpleFormatter
     JSON.pretty_generate({
       type: severity,
       time: timestamp,
-      message: message
+      message: message,
+      pid: Process.pid
     }) + "\n"
   end
 end
