@@ -13,8 +13,7 @@ RSpec.describe JsonLogFormatter do
     expect(subject.call(severity, time, progname, msg)).to eq('{
   "type": "severity",
   "time": "' + time.to_s + '",
-  "message": "msg",
-  "progname": "progname"
+  "message": "msg"
 }
 ')
   end
