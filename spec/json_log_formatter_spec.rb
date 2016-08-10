@@ -18,7 +18,7 @@ RSpec.describe JsonLogFormatter do
   it 'produces expected nice json' do
     expect(subject.call(severity, time, progname, msg)).to eq('{
   "type": "severity",
-  "time": "' + time.to_s + '",
+  "time": ' + time.to_json + ',
   "message": "msg",
   "pid": 1234,
   "process": "test"
