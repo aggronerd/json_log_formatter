@@ -12,6 +12,7 @@ RSpec.describe JsonLogFormatter do
   
   before do
     allow(Process).to receive(:pid).and_return(pid)
+    $0 = 'test'
   end
   
   it 'produces expected nice json' do
@@ -19,7 +20,8 @@ RSpec.describe JsonLogFormatter do
   "type": "severity",
   "time": "' + time.to_s + '",
   "message": "msg",
-  "pid": 1234
+  "pid": 1234,
+  "process": "test"
 }
 ')
   end

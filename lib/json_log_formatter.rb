@@ -7,7 +7,8 @@ class JsonLogFormatter < ActiveSupport::Logger::SimpleFormatter
       type: severity,
       time: timestamp,
       message: message,
-      pid: Process.pid
+      pid: Process.pid,
+      process: $0
     }) + "\n"
   end
 end
